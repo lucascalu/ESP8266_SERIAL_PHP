@@ -1,7 +1,7 @@
 void setup() {
   Serial.begin(9600);         // Comunicação serial
-  pinMode(2, OUTPUT);         // GPIO2 = LED azul interno
-  digitalWrite(2, HIGH);      // Desligado (inverso)
+  pinMode(4, OUTPUT);         // GPIO2 = LED azul interno
+  
 }
 
 void loop() {
@@ -10,10 +10,10 @@ void loop() {
     comando.trim(); // remove espaços e \r\n
 
     if (comando == "ligar") {
-      digitalWrite(2, LOW);   // Liga o LED azul (inverso)
+      digitalWrite(4, HIGH);   // Liga o LED azul 
       Serial.println("LED ligado");
     } else if (comando == "desligar") {
-      digitalWrite(2, HIGH);  // Desliga o LED
+      digitalWrite(4, LOW);  // Desliga o LED
       Serial.println("LED desligado");
     } else {
       Serial.println("Comando inválido");
